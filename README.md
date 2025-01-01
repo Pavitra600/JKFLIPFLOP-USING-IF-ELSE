@@ -34,34 +34,43 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
- 1.Open Quartus-II and create a new verilog file 
- 2.Then code the program and run it 
- 3.Check the RTL logic is correct
- 4.set end time and insert node
- 5.Get the waveform and write the result
+   1.Open Quartus-II and create a new verilog file 
+   
+   2.Then code the program and run it 
+   
+   3.Check the RTL logic is correct
+   
+   4.set end time and insert node
+   
+   5.Get the waveform and write the result
+ 
 **PROGRAM**
-module Exp7(j, k, clk, rst,q);
-input j, k, clk, rst;
-output reg q;
-
-always @(posedge clk or posedge rst) 
-begin
-    if (rst) 
-        q <= 0;          // Reset the flip-flop
-    else begin
-        case ({j, k})    // J and K control the behavior
-            2'b00: q <= q;       // No change
-            2'b01: q <= 0;       // Reset
-            2'b10: q <= 1;       // Set
-            2'b11: q <= ~q;      // Toggle
-        endcase
-    end
-end
-
-endmodule
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:24900612
-J.PAVITRA
-*/
+     
+     /* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+     Developed by: J.PAVITRA
+     RegisterNumber: 24900612
+     
+     module Exp7(j, k, clk, rst,q);
+     input j, k, clk, rst;
+     output reg q;
+     
+     always @(posedge clk or posedge rst) 
+     begin
+         if (rst) 
+             q <= 0;          // Reset the flip-flop
+         else begin
+             case ({j, k})    // J and K control the behavior
+                 2'b00: q <= q;       // No change
+                 2'b01: q <= 0;       // Reset
+                 2'b10: q <= 1;       // Set
+                 2'b11: q <= ~q;      // Toggle
+             endcase
+         end
+     end
+     
+     endmodule
+     
+     */
 
 **RTL LOGIC FOR FLIPFLOPS**
 ![Screenshot (31)](https://github.com/user-attachments/assets/a64059a5-65bc-40a6-84b6-52e706744bdb)
